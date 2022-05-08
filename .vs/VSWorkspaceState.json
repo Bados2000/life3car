@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
     "",
+    "\\public",
+    "\\public\\css",
+    "\\public\\images",
     "\\resources",
     "\\resources\\views"
   ],
