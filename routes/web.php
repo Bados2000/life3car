@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/users/list',[UserController::class,'index'])->middleware('auth');
+Route::get('/users/list',[UserController::class,'index'])->middleware('can:isAdmin');
 
 Auth::routes();
 
