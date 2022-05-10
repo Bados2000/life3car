@@ -1,0 +1,47 @@
+#container {
+    
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    
+}
+#container > #divX {
+    width: 300px !important;
+    height: min-content;
+    opacity: 1 !important;
+    background-color: White;
+    padding: 5px;
+    border-width: 7px;
+    border-style:ridge;
+    margin:auto;
+    top: 500px;
+}
+
+.ff{
+    width: 200px;
+    height: 200px;
+    opacity: 1;
+}
+
+#imie{
+    opacity: 1;
+}
+
+label{
+    color: Black !important;
+    font-weight:700;
+}
+
+ 
+
+.topek {
+	padding: 0 0 0;
+	background-image: url('../images/top-bg.jpg');
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+}
+
+p{
+ color: black;
+ font-weight: 700;
+}
