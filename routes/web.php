@@ -19,6 +19,8 @@ Route::get('/', function () {
 
 
 Route::get('/users/list',[UserController::class,'index'])->middleware('can:isAdmin');
+Route::delete('/users/{id}',[UserController::class,'destroy'])->middleware('can:isAdmin');
+
 
 Auth::routes();
 
