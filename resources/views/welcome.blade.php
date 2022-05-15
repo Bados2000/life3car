@@ -42,8 +42,8 @@
                 <h1 class="top-header"> <span class="text-warning">Life 4 Car</span> </h1>
                 <p><span style="font-size: xx-large">Wszystko czego potrzebuje twoje auto w jednym miejscu</p></span>
                 
-                <button class="btn btn-warning text-white top-button"><a href="Windex.html">Podgląd usług</a></button>
-                <button class="btn btn-warning text-white top-button"><a href="logout.php">Rozpocznij</a></button> 
+                <button class="btn btn-warning text-white top-button"><a href="{{ url('/services') }}">Podgląd usług</a></button>
+             <!--   <button class="btn btn-warning text-white top-button"><a href="logout.php">Rozpocznij</a></button>  -->
             </div>
         </div>
 		
