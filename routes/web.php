@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ServicesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +18,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/users/list',[UserController::class,'index'])->middleware('can:isAdmin');
+Route::delete('/users/{id}',[UserController::class,'destroy'])->middleware('can:isAdmin');
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/services', [App\Http\Controllers\ServicesController::class, 'show'])->name('services');
+
+Route::get('/edit/{id}',[App\Http\Controllers\ServicesController::class, 'edit']);
+Route::get('/delete/{id}',[App\Http\Controllers\ServicesController::class, 'delete']);
+Route::post('/edit',[App\Http\Controllers\ServicesController::class, 'update']);
+// Route::group(['middleware' => ['web']], function () {
+// });
+
+
