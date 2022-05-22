@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ServicesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,3 +26,9 @@ Route::delete('/users/{id}',[UserController::class,'destroy'])->middleware('can:
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/services', [App\Http\Controllers\ServicesController::class, 'show'])->name('services');
+
+// Route::group(['middleware' => ['web']], function () {
+// });
+
+
