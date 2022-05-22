@@ -28,6 +28,9 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/services', [App\Http\Controllers\ServicesController::class, 'show'])->name('services');
 
+Route::get('/edit/{id}',[App\Http\Controllers\ServicesController::class, 'edit']);
+Route::get('/delete/{id}',[App\Http\Controllers\ServicesController::class, 'delete']);
+Route::post('/edit',[App\Http\Controllers\ServicesController::class, 'update']);
 // Route::group(['middleware' => ['web']], function () {
 // });
 

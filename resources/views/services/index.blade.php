@@ -20,24 +20,32 @@
         <th scope="col">Nazwa usługi</th>
         <th scope="col">Czas realizacji (h)</th>
         <th scope="col">Cena (zł)</th>
+       
         @canany(['isAdmin','isUser'])
         <th scope="col">Akcja</th>
         @endcan
+        
         </tr>
     </thead>
     <tbody>
     @foreach($uslugi as $uslugi)    
         <tr>
-            <th scope="row">{{$uslugi->id_uslugi}}</th>
+            <th scope="row">{{$uslugi->id}}</th>
             <td>{{$uslugi->typ_uslugi}}</td>
             <td>{{$uslugi->nazwa_uslugi}}</td>
             <td>{{$uslugi->czas_realizacji}}</td>
             <td>{{$uslugi->cena_brutto}}</td>
-            @canany(['isAdmin','isUser'])
+            @canany('isUser')
             <td>
                 <button type='submit'>   
                     Dodaj
                 </button>
+            </td>
+            @endcan
+            @canany(['isAdmin'])
+            <td>
+               <a href="{{url('edit/'.$uslugi->id)}}" class="btn btn-success btn-sm">EDYTUJ</a>
+               <a href="{{url('delete/'.$uslugi['id'])}}" }} class="btn btn-danger btn-sm">USUN</a>       
             </td>
             @endcan
         </tr>
