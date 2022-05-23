@@ -26,7 +26,9 @@ Route::delete('/users/{id}',[UserController::class,'destroy'])->middleware('can:
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/services', [App\Http\Controllers\ServicesController::class, 'show'])->name('services');
+
+Route::get('/services/list', [ServicesController::class, 'index'])->middleware('can:isAdmin');
+
 
 Route::get('/edit/{id}',[App\Http\Controllers\ServicesController::class, 'edit'])->middleware('can:isAdmin');
 Route::get('/delete/{id}',[App\Http\Controllers\ServicesController::class, 'delete'])->middleware('can:isAdmin');

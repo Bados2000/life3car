@@ -50,13 +50,13 @@
         </tr>
     </thead>
     <tbody>
-    @foreach($uslugi as $uslugi)    
+    @foreach($uslugi as $uslugixd )    
         <tr>
-            <th scope="row">{{$uslugi->id}}</th>
-            <td>{{$uslugi->typ_uslugi}}</td>
-            <td>{{$uslugi->nazwa_uslugi}}</td>
-            <td>{{$uslugi->czas_realizacji}}</td>
-            <td>{{$uslugi->cena_brutto}}</td>
+            <th scope="row">{{$uslugixd->id}}</th>
+            <td>{{$uslugixd->typ_uslugi}}</td>
+            <td>{{$uslugixd->nazwa_uslugi}}</td>
+            <td>{{$uslugixd->czas_realizacji}}</td>
+            <td>{{$uslugixd->cena_brutto}}</td>
             @canany('isUser')
             <td>
                 <button type='submit'>   
@@ -66,14 +66,15 @@
             @endcan
             @canany(['isAdmin'])
             <td>
-               <a href="{{url('edit/'.$uslugi->id)}}" class="btn btn-warning btn-sm">EDYTUJ</a>
-               <a href="{{url('delete/'.$uslugi['id'])}}" }} class="btn btn-danger btn-sm">USUN</a>       
+               <a href="{{url('edit/'.$uslugixd->id)}}" class="btn btn-warning btn-sm">EDYTUJ</a>
+               <a href="{{url('delete/'.$uslugixd['id'])}}" }} class="btn btn-danger btn-sm">USUN</a>       
             </td>
             @endcan
         </tr>
     @endforeach    
     </tbody>
     </table>
+    {{$uslugi->links()}}
     @canany(['isAdmin','isUser'])
     <div class="row"> 
         <div class="center">
