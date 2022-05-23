@@ -11,7 +11,8 @@ class ServicesController extends Controller
     {
        // return uslugi::all();
        $data = uslugi::all();
-       return view ('services.index', ['uslugi'=>$data]);
-       
+       return view ('services.index', ['uslugi'=>$data
+       //uslugi::paginate(14)
+        ]);
     }
 }
