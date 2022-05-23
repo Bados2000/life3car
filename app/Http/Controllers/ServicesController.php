@@ -40,4 +40,17 @@ class ServicesController extends Controller
         $data = uslugi::all();
         return view ('services.index', ['uslugi'=>$data]);
     }
+
+    function add(Request $req)
+    {
+        $data = new uslugi;
+        $data -> typ_uslugi=$req->typ_uslugi;
+        $data -> nazwa_uslugi=$req->nazwa_uslugi;
+        $data -> czas_realizacji=$req->czas_realizacji;
+        $data -> cena_brutto=$req->cena_brutto;
+        $data -> save();
+        $data = uslugi::all();
+        return view ('services.index', ['uslugi'=>$data]);
+    }
+
 }
