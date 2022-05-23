@@ -38,3 +38,8 @@ Route::post('/add',[App\Http\Controllers\ServicesController::class, 'add'])->mid
 // });
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/pdf', [App\Http\Controllers\PdfController::class, 'index']);
