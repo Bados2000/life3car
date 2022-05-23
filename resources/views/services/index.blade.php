@@ -13,21 +13,18 @@
     <h1 class="text-center text-uppercase introduction-header">WYBIERZ USŁUGĘ</h1></span>
     @endcan
 
-    @canany(['isAdmin'])
-    <h1 class="text-center text-uppercase introduction-header">Panel edycji usług</h1></span>
-    
-    <div style="border: solid green 3px;; border-radius: 3px"> 
-        <div style="padding: 2px 2px 2px 5px;">
+    @canany(['isAdmin'])<h1 class="text-center text-uppercase introduction-header"></h1></span>
+        <div style=" display: flex; justify-content:space-between";>
         <form action="add" method="POST">
             @csrf
-            <input style="border: solid green 2px; border-radius: 5px;margin-left: 5%;"  type="text"  name='typ_uslugi' value="Typ usługi" size="10px" > 
-            <input  type="text" name='nazwa_uslugi' value="Nazwa usługi" style="border: solid green 2px; border-radius: 5px;margin-left: 1%;" size="12px" > 
-            <input  type="text" name='czas_realizacji' value="Czas realizacji" style="border: solid green 2px; border-radius: 5px;margin-left: 38.5%;" size="12px">
-            <input  type="text" name='cena_brutto' value="Cena usługi" style="border: solid green 2px; border-radius: 5px;margin-left: 3%;" size="12px">
-            <button  type="submit" class=" btn btn-success btn-sm" style="margin-left: 4.3%;">DODAJ USŁUGE</button>
+            <input placeholder='Typ usługi' style="border: solid green 2px; border-radius: 5px;"    name='typ_uslugi'  size="10px" > 
+            <input placeholder='Nazwa usługi' name='nazwa_uslugi' style="border: solid green 2px; border-radius: 5px;" size="12px" > 
+            <input placeholder='Czas realizacji' name='czas_realizacji' style="border: solid green 2px; border-radius: 5px;" size="12px">
+            <input placeholder='Cena usługi' name='cena_brutto' style="border: solid green 2px; border-radius: 5px;" size="12px">
+            <button  type="submit" class=" btn btn-success btn-sm" >DODAJ USŁUGE</button>
         </form> 
         </div>
-    </div>
+    
     @endcan
 
  <!--   <div class="hidden fixed top-0 left-0 px-6 py-4 sm:block">

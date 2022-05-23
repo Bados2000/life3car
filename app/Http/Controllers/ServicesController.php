@@ -12,7 +12,7 @@ class ServicesController extends Controller
     function index()
     {
       return view('services.index',[
-          'uslugi' => uslugi ::simplePaginate(5)
+          'uslugi' => uslugi ::paginate(5)
           
 
       ]);
