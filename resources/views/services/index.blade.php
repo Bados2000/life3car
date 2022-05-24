@@ -35,6 +35,7 @@
             <td>{{$usluga->cena_brutto}}</td>
             @canany(['isAdmin','isUser'])
             <td>
+<<<<<<< HEAD
                 <form action="{{ route('cart.store') }}" method="POST">
                     @csrf
                     <input type="hidden" name="id_uslugi" value="{{$usluga->id_uslugi}}">
@@ -42,6 +43,11 @@
                     <button type="submit" class="btn btn-primary" > <!--data-id={{$uslugi->id}}> -->  
                     Dodaj</button>
                 </form>
+=======
+                <a class="btn btn-primary" href="#" role="button"> <!--data-id={{$uslugi->id}}> -->  
+                    Dodaj
+                </a>
+>>>>>>> 441944ab8d9295d7dbe120276f99159c661fe4c9
             </td>
             @endcan
         </tr>
