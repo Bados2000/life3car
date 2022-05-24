@@ -28,6 +28,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/services', [App\Http\Controllers\ServicesController::class, 'show'])->name('services');
 
+Route::post('/services', [App\Http\Controllers\CartController::class, 'store'])->name('cart.store');
+
 // Route::group(['middleware' => ['web']], function () {
 // });
 
