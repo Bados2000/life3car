@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\userProfile;
 use App\Http\Controllers\ServicesController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +28,15 @@ Route::delete('/users/{id}',[UserController::class,'destroy'])->middleware('can:
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/profile', [userProfile::class, 'show'])->middleware('auth')->name('profile');
+Route::post('/profile/update', [userProfile::class, 'update'])->middleware('auth');
+
 Route::get('/services', [App\Http\Controllers\ServicesController::class, 'show'])->name('services');
 
 Route::get('/edit/{id}',[App\Http\Controllers\ServicesController::class, 'edit'])->middleware('can:isAdmin');
@@ -34,5 +45,3 @@ Route::post('/edit',[App\Http\Controllers\ServicesController::class, 'update'])-
 Route::post('/add',[App\Http\Controllers\ServicesController::class, 'add'])->middleware('can:isAdmin');
 // Route::group(['middleware' => ['web']], function () {
 // });
-
-
