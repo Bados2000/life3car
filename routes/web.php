@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\userProfile;
+use App\Http\Controllers\ServicesController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,3 +36,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/profile', [userProfile::class, 'show'])->middleware('auth')->name('profile');
 Route::post('/profile/update', [userProfile::class, 'update'])->middleware('auth');
+
+Route::get('/services', [App\Http\Controllers\ServicesController::class, 'show'])->name('services');
+
+Route::get('/edit/{id}',[App\Http\Controllers\ServicesController::class, 'edit'])->middleware('can:isAdmin');
+Route::get('/delete/{id}',[App\Http\Controllers\ServicesController::class, 'delete'])->middleware('can:isAdmin');
+Route::post('/edit',[App\Http\Controllers\ServicesController::class, 'update'])->middleware('can:isAdmin');
+Route::post('/add',[App\Http\Controllers\ServicesController::class, 'add'])->middleware('can:isAdmin');
+// Route::group(['middleware' => ['web']], function () {
+// });

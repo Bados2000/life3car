@@ -44,6 +44,9 @@
                 
                 <button class="btn btn-warning text-white top-button2"><a href="Windex.html">Podgląd usług</a></button>
                 <button class="btn btn-warning text-white top-button"><a href="logout.php">Rozpocznij</a></button> 
+
+                <button class="btn btn-warning text-white top-button"><a href="{{ url('/services') }}">Podgląd usług</a></button>
+
             </div>
         </div>
 		
