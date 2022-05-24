@@ -20,10 +20,12 @@ p {
 
 /** Top **/
 .top {
-	padding: 165px 0 175px;
-	background-image: url('../images/bmw.png');
-	background-position: 50% 50%;
-	background-repeat: no-repeat;
+    padding: 165px 0 175px;
+    background-image: url('../images/bmw.png');
+    background-position: 70% -100%;
+    background-repeat: no-repeat;
+    position: absolute;
+
 }
 .top2{
 	
@@ -37,18 +39,25 @@ p {
 }
 
 .top-header {
-	margin-bottom: 1.25rem;
-	font-size: 2.75rem;
+    position: absolute; left: 3cm; top: -180px;
+    margin-bottom: 1.25rem;
+    font-size: 2.75rem;
 }
 
 .top-text {
-	font-size: 1rem;
+    position: absolute; left: 1cm; top: -200px;
+    font-size: 1rem;
 }
 
 .top-button {
-	margin-top: 1.5rem;
-}
 
+	margin-top: -100px;
+    margin-left:0cm;
+}
+.top-button2 {
+    margin-top: -100px;
+    margin-left: -24.7cm;
+}
 /** Wprowadzenie **/
 .introduction {
 	padding: 50px 0 60px;
