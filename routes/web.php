@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\userProfile;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,3 +26,11 @@ Route::delete('/users/{id}',[UserController::class,'destroy'])->middleware('can:
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/profile', [userProfile::class, 'show'])->middleware('auth')->name('profile');
+Route::post('/profile/update', [userProfile::class, 'update'])->middleware('auth');
