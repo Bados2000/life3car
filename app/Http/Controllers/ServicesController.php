@@ -7,12 +7,15 @@ use App\Models\uslugi;
 
 class ServicesController extends Controller
 {
-    function show()
+    
+
+    function index()
     {
-       // return uslugi::all();
-       $data = uslugi::all();
-       return view ('services.index', ['uslugi'=>$data]);
-       
+      return view('services.index',[
+          'uslugi' => uslugi ::paginate(5)
+          
+
+      ]);
     }
 
     function edit($id)
