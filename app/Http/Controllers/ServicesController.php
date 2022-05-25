@@ -13,8 +13,6 @@ class ServicesController extends Controller
     {
       return view('services.index',[
           'uslugi' => uslugi ::paginate(5)
-          
-
       ]);
     }
 
@@ -29,7 +27,7 @@ class ServicesController extends Controller
       $data = uslugi::find($id);
       $data->delete();
       $data = uslugi::all();
-      return view ('services.index', ['uslugi'=>$data]);
+      return redirect('/services/list');
     }
     
     function update(Request $req)
@@ -41,7 +39,7 @@ class ServicesController extends Controller
         $data -> cena_brutto=$req->cena_brutto;
         $data -> save();
         $data = uslugi::all();
-        return view ('services.index', ['uslugi'=>$data]);
+        return redirect('/services/list');
     }
 
     function add(Request $req)
@@ -53,7 +51,7 @@ class ServicesController extends Controller
         $data -> cena_brutto=$req->cena_brutto;
         $data -> save();
         $data = uslugi::all();
-        return view ('services.index', ['uslugi'=>$data]);
+        return redirect('/services/list');
     }
 
 }

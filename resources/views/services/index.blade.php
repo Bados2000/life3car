@@ -82,4 +82,5 @@
     </div>  
 </div>
 @endcan
+@include('layouts.prawa') 
 @endsection
