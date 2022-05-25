@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\userProfile;
 use App\Http\Controllers\ServicesController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +19,7 @@ use App\Http\Controllers\ServicesController;
 Route::get('/', function () {
     return view('welcome');
 });
+
 
 Route::middleware(['auth','verified'])->group(function(){
     Route::get('/users/list',[UserController::class,'index'])->middleware('can:isAdmin');

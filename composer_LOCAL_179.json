@@ -11,12 +11,7 @@
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-<<<<<<< HEAD
         "laravel/ui": "^3.4"
-=======
-        "laravel/ui": "^3.4",
-        "livewire/livewire": "^2.10"
->>>>>>> c3d239019b6a6a2dfa561ce45979b2dc72ea63f1
     },
     "require-dev": {
         "facade/ignition": "^2.5",

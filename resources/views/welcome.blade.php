@@ -23,12 +23,12 @@
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+                        <a href="{{ route('profile') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Profil</a>
                     @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Login</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Rejestracja</a>
                         @endif
                     @endauth
                 </div>
@@ -40,10 +40,18 @@
         <div class="position-relative jumbotron jumbotron-fluid text-white text-center top ">
             <div class="position-relative align-items-start">
                 <h1 class="top-header"> <span class="text-warning">Life 4 Car</span> </h1>
-                <p><span style="font-size: xx-large">Wszystko czego potrzebuje twoje auto w jednym miejscu</p></span>
+                <p><span style="float: left;margin-top:-120px;font-size: large">Wszystko czego potrzebuje twoje auto w jednym miejscu</p></span>
                 
+<<<<<<< HEAD
                 <button class="btn btn-warning text-white top-button"><a href="{{ url('/services/list') }}">Podgląd usług</a></button>
              <!--   <button class="btn btn-warning text-white top-button"><a href="logout.php">Rozpocznij</a></button>  -->
+=======
+                <button class="btn btn-warning text-white top-button2"><a href="Windex.html">Podgląd usług</a></button>
+                <button class="btn btn-warning text-white top-button"><a href="logout.php">Rozpocznij</a></button> 
+
+                <button class="btn btn-warning text-white top-button"><a href="{{ url('/services') }}">Podgląd usług</a></button>
+
+>>>>>>> c3d239019b6a6a2dfa561ce45979b2dc72ea63f1
             </div>
         </div>
 		
