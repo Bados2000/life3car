@@ -14,7 +14,7 @@
 
 <div class="row justify-content-md-center col-md-12">
 <div class="col-md-10 text-center"> <h1>Profil użytkownika</h1> </div>
-<form method="POST" action="/life3car/public/profile/update" class="col-md-10 ">
+<form method="POST" action="{{ route('updateProfile') }}"class="col-md-10 ">
     @csrf
   
   <div class="form-group row">

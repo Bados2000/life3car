@@ -15,7 +15,7 @@
 
     @canany(['isAdmin'])<h1 class="text-center text-uppercase introduction-header"></h1></span>
         <div style=" display: flex; justify-content:space-between";>
-        <form action="add" method="POST">
+        <form action="/add" method="POST">
             @csrf
             <input placeholder='Typ usługi' style="border: solid green 2px; border-radius: 5px;"    name='typ_uslugi'  size="10px" > 
             <input placeholder='Nazwa usługi' name='nazwa_uslugi' style="border: solid green 2px; border-radius: 5px;" size="12px" > 

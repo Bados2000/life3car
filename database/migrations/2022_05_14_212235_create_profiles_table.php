@@ -20,11 +20,10 @@ class CreateProfilesTable extends Migration
             $table->string('image')->nullable();
             $table->string('town')->nullable();
             $table->string('street')->nullable();
-            $table->tinyInteger('houseNumber')->nullable();
+            $table->bigInteger('houseNumber')->nullable();
             $table->string('zipcode')->nullable();
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('car_id')->references('id_cars')->on('cars')->onDelete('cascade');
+            
         });
     }
 
