@@ -28,6 +28,9 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/services', [App\Http\Controllers\ServicesController::class, 'show'])->name('services');
 
+Route::get('/cart/list', [App\Http\Controllers\CartController::class, 'index'])->name('cart.index');
+Route::post('/cart/{usluga}', [App\Http\Controllers\CartController::class, 'store'])->name('cart.store');
+
 // Route::group(['middleware' => ['web']], function () {
 // });
 
