@@ -7,12 +7,12 @@ use App\Models\uslugi;
 
 class ServicesController extends Controller
 {
-    
+
 
     function index()
     {
       return view('services.index',[
-          'uslugi' => uslugi ::paginate(5)
+          'uslugi' => uslugi ::paginate(10)
       ]);
     }
 
@@ -29,7 +29,7 @@ class ServicesController extends Controller
       $data = uslugi::all();
       return redirect('/services/list');
     }
-    
+
     function update(Request $req)
     {
         $data = uslugi::find($req->id);

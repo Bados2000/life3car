@@ -8,7 +8,7 @@
 </style>
 <div class="container">
 
-    <span style="color: red">
+    <span style="color: black">
     @canany(['isUser'])
     <h1 class="text-center text-uppercase introduction-header">WYBIERZ USŁUGĘ</h1></span>
     @endcan
@@ -17,37 +17,37 @@
         <div style=" display: flex; justify-content:space-between";>
         <form action="/add" method="POST">
             @csrf
-            <input placeholder='Typ usługi' style="border: solid green 2px; border-radius: 5px;"    name='typ_uslugi'  size="10px" > 
-            <input placeholder='Nazwa usługi' name='nazwa_uslugi' style="border: solid green 2px; border-radius: 5px;" size="12px" > 
+            <input placeholder='Typ usługi' style="border: solid green 2px; border-radius: 5px;"    name='typ_uslugi'  size="10px" >
+            <input placeholder='Nazwa usługi' name='nazwa_uslugi' style="border: solid green 2px; border-radius: 5px;" size="12px" >
             <input placeholder='Czas realizacji' name='czas_realizacji' style="border: solid green 2px; border-radius: 5px;" size="12px">
             <input placeholder='Cena usługi' name='cena_brutto' style="border: solid green 2px; border-radius: 5px;" size="12px">
             <button  type="submit" class=" btn btn-success btn-sm" >DODAJ USŁUGE</button>
-        </form> 
+        </form>
         </div>
-    
+
     @endcan
 
  <!--   <div class="hidden fixed top-0 left-0 px-6 py-4 sm:block">
        <a href="{{ url('/') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Wstecz</a>
     </div> -->
-    
+
     <table>
-    <thead>  
+    <thead>
         <tr>
         <th scope="col">#</th>
         <th scope="col">Typ usługi</th>
         <th scope="col">Nazwa usługi</th>
         <th scope="col">Czas realizacji (h)</th>
         <th scope="col">Cena (zł)</th>
-       
+
         @canany(['isAdmin','isUser'])
         <th scope="col">Akcja</th>
         @endcan
-        
+
         </tr>
     </thead>
     <tbody>
-    @foreach($uslugi as $uslugixd )    
+    @foreach($uslugi as $uslugixd )
         <tr>
             <th scope="row">{{$uslugixd->id}}</th>
             <td>{{$uslugixd->typ_uslugi}}</td>
@@ -56,7 +56,7 @@
             <td>{{$uslugixd->cena_brutto}}</td>
             @canany('isUser')
             <td>
-                <button type='submit'>   
+                <button type='submit'>
                     Dodaj
                 </button>
             </td>
@@ -64,23 +64,23 @@
             @canany(['isAdmin'])
             <td>
                <a href="{{url('edit/'.$uslugixd->id)}}" class="btn btn-warning btn-sm">EDYTUJ</a>
-               <a href="{{url('delete/'.$uslugixd['id'])}}" }} class="btn btn-danger btn-sm">USUN</a>       
+               <a href="{{url('delete/'.$uslugixd['id'])}}" }} class="btn btn-danger btn-sm">USUN</a>
             </td>
             @endcan
         </tr>
-    @endforeach    
+    @endforeach
     </tbody>
     </table>
     {{$uslugi->links()}}
     @canany(['isAdmin','isUser'])
-    <div class="row"> 
+    <div class="row">
         <div class="center">
-            <button type='submit'>   
+            <button type='submit'>
                 Złóż zamówienie
             </button>
         </div>
-    </div>  
+    </div>
 </div>
 @endcan
-@include('layouts.prawa') 
+@include('layouts.prawa')
 @endsection
