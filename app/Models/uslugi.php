@@ -14,7 +14,7 @@ class uslugi extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
     public $table= "uslugi" ;
 
-    
+
     protected $fillable = [
         'id',
         'typ_uslugi',

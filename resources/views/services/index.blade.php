@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layout')
 
 @section('content')
 
@@ -28,9 +28,6 @@
 
     @endcan
 
- <!--   <div class="hidden fixed top-0 left-0 px-6 py-4 sm:block">
-       <a href="{{ url('/') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Wstecz</a>
-    </div> -->
 
     <table>
     <thead>
@@ -57,9 +54,7 @@
             <td>{{$uslugixd->cena_brutto}}</td>
             @canany('isUser')
             <td>
-                <button class="btn btn-success btn-sm add-cart-button" data-id="{{$uslugixd->id}}">
-                    <i class="fa fa-cart-plus"></i> Dodaj do koszyka
-                </button>
+                <a href="{{ route('add.to.cart', $uslugixd->id) }}">Dodaj</a>
             </td>
             @endcan
             @canany(['isAdmin'])
