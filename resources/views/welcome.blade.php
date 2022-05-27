@@ -8,18 +8,18 @@
         <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/styl.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/custom.css') }}" rel="stylesheet">
-            
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <div class="position-relative jumbotron jumbotron-fluid text-white text-center top ">
             <div class="position-relative align-items-start">
                 <h1 class="top-header"> <span class="text-warning">Life 4 Car</span> </h1>
-                <p><span style="float: left;margin-top:-120px;font-size: large">Wszystko czego potrzebuje twoje auto w jednym miejscu</p></span>                
+                <p><span style="float: left;margin-top:-120px;font-size: large">Wszystko czego potrzebuje twoje auto w jednym miejscu</p></span>
                 <button class="btn btn-warning text-white top-button"><a href="{{ url('/services/list') }}">Podgląd usług</a></button>
+
             </div>
-        </div>  
-        
-        
+        </div>
+
+
         <div class="introduction">
             <h2 class="text-center text-uppercase introduction-header">OFERUJEMY</h2>
             <div class="container">
@@ -89,13 +89,12 @@
             </div>
         </div>
     </div>
-    @include('layouts.prawa')  
+    @include('layouts.prawa')
 @endsection
 
 
 
 
-     
 
-		
-		
+
+
