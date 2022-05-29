@@ -70,15 +70,9 @@
     </tbody>
     </table>
     {{$uslugi->links()}}
-    @canany(['isAdmin','isUser'])
-    <div class="row">
-        <div class="center">
-            <button type='submit'>
-                Złóż zamówienie
-            </button>
-        </div>
-    </div>
-</div>
-@endcan
+
+
+
+
 @include('layouts.prawa')
 @endsection
