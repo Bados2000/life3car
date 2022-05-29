@@ -54,13 +54,15 @@
             <td>{{$uslugixd->cena_brutto}}</td>
             @canany('isUser')
             <td>
-                <a href="{{ route('add.to.cart', $uslugixd->id) }}">Dodaj</a>
+
+                  <a href="{{ route('add.to.cart', $uslugixd->id) }}" class="btn btn-success"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Dodaj</a>
+
             </td>
             @endcan
             @canany(['isAdmin'])
             <td>
                <a href="{{url('edit/'.$uslugixd->id)}}" class="btn btn-warning btn-sm">EDYTUJ</a>
-               <a href="{{url('delete/'.$uslugixd['id'])}}" }} class="btn btn-danger btn-sm">USUN</a>
+               <a href="{{url('delete/'.$uslugixd['id'])}}"  class="btn btn-danger btn-sm">USUN</a>
             </td>
             @endcan
         </tr>
