@@ -10,6 +10,17 @@
         <link href="{{ asset('/css/custom.css') }}" rel="stylesheet">
 
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet"><br/>
+
+        @canany(['isAdmin'])
+        <div style="float:right">
+            <div class="row">
+                <div class="col-md">    
+            <button class="btn btn-warning btn-sm"><a href="" >EDYTUJ</a>
+                </div>
+            </div>    
+        </div>           
+        @endcan
+
             <h2 class="text-center text-uppercase introduction-header text-danger">TYP:   <span style="color: black">Detailing</h2>
             <div class="container">
                 <div class="row">
