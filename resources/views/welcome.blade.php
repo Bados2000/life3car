@@ -71,12 +71,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md">
-                    <img class="rounded img-fluid portfolio-img" src="images/tuning1.jpg" alt="projekt1">
+                    <img class="rounded img-fluid portfolio-img" src="images/lexus1-miniaturka.jpg" alt="projekt1">
                     <br>
                     <span class="text-uppercase page-label text-danger">Typ</span>
                     <h3 class="text-uppercase portfolio-subheader">Detailing</h3>
-                    <p>Wykonano: Oklejenie samochodu folią termokurczliwą o zmiennym kolorze, przyciemnienie szyb...</p>
-                    <button class="btn btn-danger portfolio-button">Czytaj wiecej</button>
+                    <p>Wykonano: Oklejenie samochodu folią termokurczliwą PPF o zmiennym kolorze...</p>
+                    <button class="btn btn-danger portfolio-button"><a href="{{ url('/realizacja1') }}">Czytaj wiecej</a></button>
                 </div>
                 <div class="col-md">
                     <img class="rounded img-fluid portfolio-img" src="images/tuning2.jpg" alt="projekt2">

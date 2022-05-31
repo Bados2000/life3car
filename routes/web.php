@@ -17,9 +17,11 @@ use App\Http\Controllers\ServicesController;
 */
 
 Route::get('/', function () {
-    return view('layout');
+    return view('welcome');
 });
 Route::get('/services/list',[ServicesController::class, 'index']);
+
+Route::get('/realizacja1', [App\Http\Controllers\Realizacja1Controller::class, 'index'])->name('realizacja1');
 
 
 Route::get('cart', [App\Http\Controllers\ServicesController::class, 'cart'])->name('cart');
