@@ -22,6 +22,7 @@ Route::get('/', function () {
 Route::get('/services/list',[ServicesController::class, 'index']);
 
 Route::get('/realizacja1', [App\Http\Controllers\Realizacja1Controller::class, 'index'])->name('realizacja1');
+Route::get('/realizacja2', [App\Http\Controllers\Realizacja2Controller::class, 'index'])->name('realizacja2');
 
 
 Route::get('cart', [App\Http\Controllers\ServicesController::class, 'cart'])->name('cart');
