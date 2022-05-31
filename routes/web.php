@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\userProfile;
 use App\Http\Controllers\ServicesController;
-
+use App\Http\Controllers\updateCar;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +17,7 @@ use App\Http\Controllers\ServicesController;
 */
 
 Route::get('/', function () {
-    return view('layout');
+    return view('welcome');
 });
 Route::get('/services/list',[ServicesController::class, 'index']);
 
@@ -40,6 +40,8 @@ Route::middleware(['auth','verified'])->group(function(){
     Route::get('/pdf', [App\Http\Controllers\PdfController::class, 'index']);
     Route::get('/profile', [userProfile::class, 'show'])->middleware('auth')->name('profile');
     Route::post('/profile/update', [userProfile::class, 'update'])->name('updateProfile');
+    Route::get('/updateCar', [updateCar::class, 'showw'])->middleware('auth')->name('updateCar');
+    Route::post('/updateCar', [updateCar::class, 'updatee'])->middleware('auth')->name('updateCar');
 });
 
 

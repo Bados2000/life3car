@@ -81,7 +81,14 @@
         </select>
       </div>
   </div>
-  <div class="col-md-10 text-center"><button type="submit" class="btn btn-primary">Zatwierdź</button><div>
+    <div class="form-group row">
+      <label for="userCar" class="col-sm-2 col-form-label">Nie możesz znaleźć swojego samochodu?</label>
+      <div class="col-sm-10">
+      <a href="{{ route('updateCar') }}">Wypełnij formularz! </a>
+
+      </div>
+  </div>
+<div class="text-center"><button type="submit" class="btn btn-primary",button style="background-color:dodgerblue; border-color:dodgerblue; color:white">Zatwierdź</button><div>
 </form>
 </div>
 @endsection
