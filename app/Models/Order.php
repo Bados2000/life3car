@@ -24,7 +24,7 @@ class Order extends Model
 
     public function services(): BelongsToMany
     {
-        return $this->belongsToMany(uslugi::class);
+        return $this->belongsToMany(uslugi::class)->withPivot('liczba');
     }
 
 

@@ -13,10 +13,11 @@
         <table>
             <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">Ilosc</th>
+                <th scope="col">#Id zamówienia</th>
+                <th scope="col">Całkowita ilosc produktów</th>
                 <th scope="col">Cena</th>
                 <th scope="col">Produkty</th>
+                <th scope="col">Dane klienta</th>
             </tr>
             </thead>
             <tbody>
@@ -27,14 +28,15 @@
                     <th scope="row">{{$order->quantity}}</th>
                     <th scope="row">{{$order->price}}</th>
                     <th scope="row">
-
                         @foreach($order->services as $servicesxd )
                             <ul>
-                                <li>{{ $servicesxd->nazwa_uslugi }} +++  </li>
+                                <li>{{ $servicesxd->nazwa_uslugi }} Liczba sztuk: {{$servicesxd->pivot->liczba }} </li>
                             </ul>
                         @endforeach
+                    </th>
+                    <th scope="row">
 
-
+                                {{ $order->user->name }} {{ $order->user->surname }} {{ $order->user->profile->marka }}
 
                     </th>
 
