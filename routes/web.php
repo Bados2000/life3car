@@ -5,6 +5,9 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\userProfile;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\updateCar;
+
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\CartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +23,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/services/list',[ServicesController::class, 'index']);
+
+Route::get('/realizacja1', [App\Http\Controllers\Realizacja1Controller::class, 'index'])->name('realizacja1');
+Route::get('/realizacja2', [App\Http\Controllers\Realizacja2Controller::class, 'index'])->name('realizacja2');
 
 
 Route::get('cart', [App\Http\Controllers\ServicesController::class, 'cart'])->name('cart');
@@ -42,6 +48,11 @@ Route::middleware(['auth','verified'])->group(function(){
     Route::post('/profile/update', [userProfile::class, 'update'])->name('updateProfile');
     Route::get('/updateCar', [updateCar::class, 'showw'])->middleware('auth')->name('updateCar');
     Route::post('/updateCar', [updateCar::class, 'updatee'])->middleware('auth')->name('updateCar');
+
+    Route::get('/orders', [App\Http\Controllers\OrderController::class, 'index'])->name('index');
+    Route::post('/orders', [App\Http\Controllers\OrderController::class, 'store'])->name('orders.store');
+
+
 });
 
 

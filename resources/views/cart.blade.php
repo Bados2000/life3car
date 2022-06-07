@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('content')
+    <form action="{{route('orders.store')}}" method="POST" id="order-form">
     <table id="cart" class="table table-hover table-condensed">
         <thead>
         <tr>
@@ -12,10 +13,16 @@
         </tr>
         </thead>
         <tbody>
-        @php $total = 0 @endphp
+        @php
+            $total = 0;
+            $totalquantity=0;
+        @endphp
         @if(session('cart'))
             @foreach(session('cart') as $id => $details)
-                @php $total += $details['cena_brutto'] * $details['quantity'] @endphp
+                @php
+                    $total += $details['cena_brutto'] * $details['quantity'];
+                    $totalquantity += $details['quantity'];
+                @endphp
                 <tr data-id="{{ $id }}">
                     <td data-th="Product">
                         <div class="row">
@@ -38,17 +45,20 @@
         @endif
         </tbody>
         <tfoot>
+        <input placeholder='xD' style="border: solid green 2px; border-radius: 5px;"    name='price'  value='{{ $total }}' size="10px" >
+        <input placeholder='xD2.0' style="border: solid green 2px; border-radius: 5px;"    name='quantity'  value='{{ $totalquantity }}' size="10px" >
         <tr>
             <td colspan="5" class="text-right"><h3><strong>Total ${{ $total }}</strong></h3></td>
         </tr>
         <tr>
             <td colspan="5" class="text-right">
                 <a href="{{ url('/services/list') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Kontynuj wybieranie usług</a>
-                <button class="btn btn-success">Checkout</button>
+                <button type='submit' class="btn btn-success">Checkout</button>
             </td>
         </tr>
         </tfoot>
     </table>
+    </form>
 @endsection
 
 @section('scripts')

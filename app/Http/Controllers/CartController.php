@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
+
 
 class CartController extends Controller
 {
@@ -27,6 +29,8 @@ class CartController extends Controller
 
         return redirect()->route('cart.list');
     }
+
+
 
     public function updateCart(Request $request)
     {
