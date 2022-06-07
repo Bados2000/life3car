@@ -25,6 +25,7 @@ class cars extends Model
     public function profiles(): HasMany
     {
         return $this->hasMany(Profile::class);
+
     }
 
 }

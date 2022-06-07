@@ -36,7 +36,7 @@
                     </th>
                     <th scope="row">
 
-                                {{ $order->user->name }} {{ $order->user->surname }}<br>{{ $order->user->profile->cars->marka}}
+                                {{ $order->user->name }} {{ $order->user->surname }}<br>{{ $order->user->profile->cars->marka}} {{ $order->user->profile->cars->model}}
 
                     </th>
 
