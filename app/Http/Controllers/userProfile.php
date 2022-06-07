@@ -18,9 +18,9 @@ class userProfile extends Controller
         $userData = User::find($userID);
         $userDataProfile = Profile::where('user_id', $userID)->first();
         $cars = DB::table('cars')->get();
-        
+
         return view('userProfile', [
-                                    "userData"=>$userData, 
+                                    "userData"=>$userData,
                                     "userDataProfile"=>$userDataProfile,
                                     "cars"=>$cars]);
     }
@@ -39,7 +39,7 @@ class userProfile extends Controller
             'userZip' => 'string',
         ]);
 
-        
+
         $userDataTableUsers = User::updateOrCreate([
             'id' => $userID,
         ],[
