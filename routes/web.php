@@ -4,9 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\userProfile;
 use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\updateCar;
+
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CartController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,9 +46,12 @@ Route::middleware(['auth','verified'])->group(function(){
     Route::get('/pdf', [App\Http\Controllers\PdfController::class, 'index']);
     Route::get('/profile', [userProfile::class, 'show'])->middleware('auth')->name('profile');
     Route::post('/profile/update', [userProfile::class, 'update'])->name('updateProfile');
+    Route::get('/updateCar', [updateCar::class, 'showw'])->middleware('auth')->name('updateCar');
+    Route::post('/updateCar', [updateCar::class, 'updatee'])->middleware('auth')->name('updateCar');
 
     Route::get('/orders', [App\Http\Controllers\OrderController::class, 'index'])->name('index');
     Route::post('/orders', [App\Http\Controllers\OrderController::class, 'store'])->name('orders.store');
+
 
 });
 

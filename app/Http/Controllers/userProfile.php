@@ -17,7 +17,6 @@ class userProfile extends Controller
         $userID = Auth::id();
         $userData = User::find($userID);
         $userDataProfile = Profile::where('user_id', $userID)->first();
-        $cars = DB::table('cars')->get();
 
         return view('userProfile', [
                                     "userData"=>$userData,
@@ -63,4 +62,6 @@ class userProfile extends Controller
 
         return redirect()->route('profile');
     }
+    
+
 }
