@@ -1,33 +1,30 @@
 <?php
 
 namespace App\Models;
-
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 
-class uslugi extends Authenticatable
+class cars extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    public $table = "uslugi";
-
-
     protected $fillable = [
-        'id',
-        'typ_uslugi',
-        'nazwa_uslugi',
-        'czas_realizacji',
-        'cena_brutto',
+        'id_cars',
+        'marka',
+        'model',
+        'generacja',
     ];
 
-    public function orders(): BelongsToMany
+    public function profiles(): HasMany
     {
-        return $this->belongsToMany(Order::class);
-
+        return $this->hasMany(Profile::class);
     }
+
 }

@@ -23,7 +23,7 @@ class CreateProfilesTable extends Migration
             $table->bigInteger('houseNumber')->nullable();
             $table->string('zipcode')->nullable();
             $table->timestamps();
-            
+
         });
     }
 
