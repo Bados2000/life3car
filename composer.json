@@ -4,7 +4,7 @@
     "description": "Projekt na bazy danych.",
     "license": "MIT",
     "require": {
-        "php": "^7.3|^8.0",
+        "php": "^7.4|^8.0",
         "barryvdh/laravel-dompdf": "^1.0",
         "darryldecode/cart": "^4.2",
         "fruitcake/laravel-cors": "^2.0",

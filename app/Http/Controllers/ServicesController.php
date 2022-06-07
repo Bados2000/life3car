@@ -77,7 +77,7 @@ class ServicesController extends Controller
         }
 
         session()->put('cart', $cart);
-        return redirect()->back()->with('success', 'Product added to cart successfully!');
+        return redirect()->back()->with('success', 'Pomyslnie dodano usługę!');
     }
 
     /**
@@ -91,7 +91,7 @@ class ServicesController extends Controller
             $cart = session()->get('cart');
             $cart[$request->id]["quantity"] = $request->quantity;
             session()->put('cart', $cart);
-            session()->flash('success', 'Cart updated successfully');
+            session()->flash('success', 'Koszyk zaktualizowany');
         }
     }
 
@@ -108,7 +108,7 @@ class ServicesController extends Controller
                 unset($cart[$request->id]);
                 session()->put('cart', $cart);
             }
-            session()->flash('success', 'Product removed successfully');
+            session()->flash('success', 'Usługa usunięta');
         }
     }
 

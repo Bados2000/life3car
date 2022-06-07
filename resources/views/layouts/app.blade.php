@@ -34,7 +34,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                       
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -69,10 +69,13 @@
                                     <a class="dropdown-item" href="{{ route('profile') }}">
                                         {{ __('Profil') }}
                                     </a>
-                                    
+
                                     <a class="dropdown-item" href="/services/list"> Usługi</a>
                                     @canany(['isAdmin'])
                                     <a class="dropdown-item" href="/users/list"> Użytkownicy</a>
+                                    @endcan
+                                    @canany(['isAdmin','isUser'])
+                                        <a class="dropdown-item" href="orders"> Zamówienia</a>
                                     @endcan
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
