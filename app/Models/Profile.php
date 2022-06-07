@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+
 class Profile extends Model
 {
     use HasFactory;
@@ -14,8 +15,7 @@ class Profile extends Model
 
     public function cars()
     {
-        $kox='car_id';
-        return $this->hasOne(cars::class, 'id_cars');
+            return $this->hasOne(cars::class, 'id_cars','car_id');
     }
 }
 
