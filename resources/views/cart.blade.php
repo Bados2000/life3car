@@ -48,7 +48,7 @@
         <input placeholder='xD' style="border: solid green 2px; border-radius: 5px;"    name='price'  value='{{ $total }}' size="10px" >
         <input placeholder='xD2.0' style="border: solid green 2px; border-radius: 5px;"    name='quantity'  value='{{ $totalquantity }}' size="10px" >
         <tr>
-            <td colspan="5" class="text-right"><h3><strong>Total ${{ $total }}</strong></h3></td>
+            <td colspan="5" class="text-right"><h3><strong>Total {{ $total }} PLN</strong></h3></td>
         </tr>
         <tr>
             <td colspan="5" class="text-right">

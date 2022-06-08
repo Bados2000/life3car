@@ -30,7 +30,7 @@
                     <th scope="row">
                         @foreach($order->services as $servicesxd )
                             <ul>
-                                <li>{{ $servicesxd->nazwa_uslugi }} Liczba sztuk: {{$servicesxd->pivot->liczba }} </li>
+                                <li>{{ $servicesxd->nazwa_uslugi }} || Liczba sztuk: {{$servicesxd->pivot->liczba }} </li>
                             </ul>
                         @endforeach
                     </th>
