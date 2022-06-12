@@ -22,7 +22,7 @@ use App\Http\Controllers\CartController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/services/list',[ServicesController::class, 'index']);
+Route::get('/services/list',[ServicesController::class, 'index'])->name('servicesList');
 
 Route::get('/realizacja1', [App\Http\Controllers\Realizacja1Controller::class, 'index'])->name('realizacja1');
 Route::get('/realizacja2', [App\Http\Controllers\Realizacja2Controller::class, 'index'])->name('realizacja2');
@@ -43,7 +43,7 @@ Route::middleware(['auth','verified'])->group(function(){
     Route::post('/edit',[App\Http\Controllers\ServicesController::class, 'update'])->middleware('can:isAdmin');
     Route::post('/add',[App\Http\Controllers\ServicesController::class, 'add'])->middleware('can:isAdmin');
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-    Route::get('/pdf', [App\Http\Controllers\PdfController::class, 'index']);
+    Route::get('/pdf', [App\Http\Controllers\PdfController::class, 'index'])->name('getPDF');
     Route::get('/profile', [userProfile::class, 'show'])->middleware('auth')->name('profile');
     Route::post('/profile/update', [userProfile::class, 'update'])->name('updateProfile');
     Route::get('/updateCar', [updateCar::class, 'showw'])->middleware('auth')->name('updateCar');

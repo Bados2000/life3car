@@ -70,12 +70,12 @@
                                         {{ __('Profil') }}
                                     </a>
 
-                                    <a class="dropdown-item" href="/services/list"> Usługi</a>
+                                    <a class="dropdown-item" href="{{route('servicesList')}}"> Usługi</a>
                                     @canany(['isAdmin'])
                                     <a class="dropdown-item" href="/users/list"> Użytkownicy</a>
                                     @endcan
                                     @canany(['isAdmin','isUser'])
-                                        <a class="dropdown-item" href="orders"> Zamówienia</a>
+                                        <a class="dropdown-item" href="{{route('index')}}"> Zamówienia</a>
                                     @endcan
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

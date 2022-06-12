@@ -66,6 +66,21 @@
   box-sizing: border-box;
 }
 
+.positionText{
+  position: relative;
+  top: 50px;
+  left: 0;
+  width: 40%;
+  transform: translateX(20%);
+}
+
+.positionButton{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 @media (prefers-reduced-motion: no-preference) {
   :root {
     scroll-behavior: smooth;

@@ -6,19 +6,19 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 
 
+
 class CartController extends Controller
 {
     public function cartList()
     {
-        $cartItems = \Cart::getContent();
-        // dd($cartItems);
+        $cartItems = Cart::getContent();
         return view('cart', compact('cartItems'));
     }
 
 
     public function addToCart(Request $request)
     {
-        \Cart::add([
+        Cart::add([
             'id' => $request->id,
             'typ_uslugi' => $request->typ_uslugi,
             'nazwa_uslugi' => $request->nazwa_uslugi,

@@ -1,0 +1,14 @@
+.positionText{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 40%;
+    transform: translateX(20%);
+}
+
+.positionButton{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

@@ -1,0 +1,101 @@
+body{
+    font-family: 'Roboto',"DejaVu Sans", sans-serif;
+}
+
+
+
+
+.infoTable, .servicesTable, .userCar{
+    width: 100%;
+    border-collapse: collapse; 
+}
+.infoTable tr td{
+    font-size: 14px;
+    max-width: 50%;
+    width: 50%;
+    vertical-align: top;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.infoTable th.title{
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 25px;
+}
+
+.infoTableData{
+    display: inline-block;
+    width: 100%;
+}
+
+.servicesTable{
+    margin-top: 40px;
+}
+
+.servicesTable .servicesTableTitle{
+    width: 100%;
+    font-size: 24px;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.servicesTable td {
+    text-align: center;
+    padding: 5px 0;
+}
+
+.servicesTable .servicesHeader th{
+    border: 1px solid black;
+    padding: 5px 0;
+}
+
+.servicesTable .servicesList td{
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.servicesTable .totalRow{
+    border: 1px solid black;
+}
+
+.servicesTable .totalRow th[colspan="5"]{
+    text-align: right;
+    padding: 5px 5px 5px 0px;
+    font-size: 18px;
+}
+
+.userCar{
+    margin-top: 30px;
+}
+
+
+.userCar .userCarTitle{
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0; 
+    border-top: 1px solid black;
+    border-bottom: 1px dotted black;
+}
+
+.userCar .userCarInfo{
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+    padding: 10px 0; 
+    border-bottom: 1px solid black;
+}
+
+.servicesList .nameWidth{
+    width: 50%;
+}
+.servicesList .priceWidth{
+    width: 15%;
+}
+
+.servicesList.servicesBackground {
+    background: #ddd;
+}

@@ -11,10 +11,10 @@
 
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <div class="position-relative jumbotron jumbotron-fluid text-white text-center top ">
-            <div class="position-relative align-items-start">
+            <div class="positionText">
                 <h1 class="top-header"> <span class="text-warning">Life 4 Car</span> </h1>
                 <p><span style="float: left;margin-top:-120px;font-size: large">Wszystko czego potrzebuje twoje auto w jednym miejscu</p></span>
-                <button class="btn btn-warning text-white top-button"><a href="{{ url('/services/list') }}">Podgląd usług</a></button>
+                <a class="btn btn-warning text-white top-button positionButton" href="{{ url('/services/list') }}">Podgląd usług</a>
 
             </div>
         </div>
@@ -76,7 +76,7 @@
                     <span class="text-uppercase page-label text-danger">Typ</span>
                     <h3 class="text-uppercase portfolio-subheader">Detailing</h3>
                     <p>Wykonano: Oklejenie samochodu folią termokurczliwą PPF o zmiennym kolorze, zostały przyciemnione szyby...</p>
-                    <button class="btn btn-danger portfolio-button"><a href="{{ url('/realizacja1') }}">Czytaj wiecej</a></button>
+                    <a class="btn btn-danger portfolio-button" href="{{ url('/realizacja1') }}">Czytaj wiecej</a>
                 </div>
                 <div class="col-md">
                     <img class="rounded img-fluid portfolio-img" src="images/sej6-miniaturka.jpg" alt="projekt2">
@@ -84,7 +84,7 @@
                     <span class="text-uppercase page-label text-danger">Typ</span>
                     <h3 class="text-uppercase portfolio-subheader">Detailing + Chip-tuning</h3>
                     <p>Wykonako: Odnowienie orginalnego lakieru, odmalowanie elementow plastikowych, zwiększenie mocy silnika...</p>
-                    <button class="btn btn-danger portfolio-button"><a href="{{ url('/realizacja2') }}">Czytaj wiecej</a></button>
+                    <a class="btn btn-danger portfolio-button" href="{{ url('/realizacja2') }}">Czytaj wiecej</a>
                 </div>
             </div>
         </div>
