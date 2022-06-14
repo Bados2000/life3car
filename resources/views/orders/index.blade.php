@@ -19,9 +19,14 @@
                 <th scope="col">Cena</th>
                 <th scope="col">Usługi</th>
                 <th scope="col">Dane klienta</th>
+                <th scope="col">Status</th>
+                <th scope="col">Data początku realizacji</th>
+                <th scope="col">Przewidywana data końca realizacji</th>
             </tr>
+
             </thead>
             <tbody>
+
 
             @foreach($orders as $order )
                 @if($order->user->id===Auth::id())
@@ -41,6 +46,29 @@
                                 {{ $order->user->name }} {{ $order->user->surname }}<br>{{ $order->user->profile->cars->marka}} {{ $order->user->profile->cars->model}}
 
                     </th>
+                    <th scope="row">
+                        {{$order->status}}
+                    </th>
+                        @if($order->status==='Zatwierdzone')
+                    <th scope="row">
+                        {{$order->data_start}}
+                    </th>
+                    @else
+                        <th scope="row">
+                            Dostępne po zatwierdzeniu
+                        </th>
+                    @endif
+                    @if($order->status==='Zatwierdzone')
+                        <th scope="row">
+                            {{$order->data_koniec}}
+                        </th>
+                    @else
+                        <th scope="row">
+                            Dostępne po zatwierdzeniu
+                        </th>
+                    @endif
+
+
 
                 </tr>
                 @endif
@@ -99,8 +127,9 @@
                         {{$order->data_koniec}}
                     </th>
                     <th scope="row">
-                        <a href="{{url('editerek/'.$order->id)}}" class="btn btn-warning btn-sm">EDYTUJ</a>
+                        <a class="btn btn-warning fa fa-edit" href="#" data-toggle="modal" data-target="#ModalEdit{{$order->id}}" style="color:black">Edit</a>
                     </th>
+                    @include('orders.edit')
                 </tr>
             @endforeach
             </tbody>

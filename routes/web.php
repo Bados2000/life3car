@@ -47,12 +47,13 @@ Route::middleware(['auth','verified'])->group(function(){
     Route::get('/pdf', [App\Http\Controllers\PdfController::class, 'index'])->name('getPDF');
     Route::get('/profile', [userProfile::class, 'show'])->middleware('auth')->name('profile');
     Route::post('/profile/update', [userProfile::class, 'update'])->name('updateProfile');
-    Route::post('/editerek',[App\Http\Controllers\OrderController::class, 'update'])->middleware('can:isAdmin');
-    ;
+    Route::get('/editerek/{id}',[App\Http\Controllers\OrderController::class, 'edit'])->middleware('can:isAdmin');
+    Route::post('/updaterek{id}',[App\Http\Controllers\OrderController::class, 'update'])->name('order.update')->middleware('can:isAdmin');
+
     Route::get('/find',[ServicesController::class, 'find'])->name('web.find');
 
     Route::get('/updateCar', [updateCar::class, 'showw'])->middleware('auth')->name('updateCar');
-    Route::post('/updateCar', [updateCar::class, 'updatee'])->middleware('auth')->name('updateCar');
+    Route::post('/updateCar', [updateCar::class, 'updatee'])->middleware('auth')->name('updateCars');
 
     Route::get('/orders', [App\Http\Controllers\OrderController::class, 'index'])->name('index');
     Route::post('/orders', [App\Http\Controllers\OrderController::class, 'store'])->name('orders.store');

@@ -163,6 +163,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Darryldecode\Cart\CartServiceProvider::class,
 
+
         /*
          * Package Service Providers...
          */
