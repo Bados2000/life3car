@@ -47,7 +47,7 @@ Route::middleware(['auth','verified'])->group(function(){
     Route::get('/pdf', [App\Http\Controllers\PdfController::class, 'index'])->name('getPDF');
     Route::get('/profile', [userProfile::class, 'show'])->middleware('auth')->name('profile');
     Route::post('/profile/update', [userProfile::class, 'update'])->name('updateProfile');
-
+    Route::post('/editerek',[App\Http\Controllers\OrderController::class, 'update'])->middleware('can:isAdmin');
     ;
     Route::get('/find',[ServicesController::class, 'find'])->name('web.find');
 

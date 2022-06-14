@@ -14,10 +14,10 @@
         <table>
             <thead>
             <tr>
-                <th scope="col">#Id zamówienia</th>
-                <th scope="col">Całkowita ilosc produktów</th>
+                <th scope="col">nikalny numer zamówienia</th>
+                <th scope="col">Całkowita ilosc usług</th>
                 <th scope="col">Cena</th>
-                <th scope="col">Produkty</th>
+                <th scope="col">Usługi</th>
                 <th scope="col">Dane klienta</th>
             </tr>
             </thead>
@@ -32,7 +32,7 @@
                     <th scope="row">
                         @foreach($order->services as $servicesxd )
                             <ul>
-                                <li>{{ $servicesxd->nazwa_uslugi }} || Liczba sztuk: {{$servicesxd->pivot->liczba }} </li>
+                                <li>{{ $servicesxd->nazwa_uslugi }} <br> Liczba sztuk: {{$servicesxd->pivot->liczba }} </li>
                             </ul>
                         @endforeach
                     </th>
@@ -58,11 +58,15 @@
         <table>
             <thead>
             <tr>
-                <th scope="col">#Id zamówienia</th>
-                <th scope="col">Całkowita ilosc produktów</th>
+                <th scope="col">Unikalny numer zamówienia</th>
+                <th scope="col">Całkowita ilosc usług</th>
                 <th scope="col">Cena</th>
-                <th scope="col">Produkty</th>
+                <th scope="col">Usługi</th>
                 <th scope="col">Dane klienta</th>
+                <th scope="col">Status</th>
+                <th scope="col">Data początku realizacji</th>
+                <th scope="col">Przewidywana data końca realizacji</th>
+                <th scope="col">Zarządzaj zamówieniem</th>
             </tr>
             </thead>
             <tbody>
@@ -76,7 +80,7 @@
                     <th scope="row">
                         @foreach($order->services as $servicesxd )
                             <ul>
-                                <li>{{ $servicesxd->nazwa_uslugi }} || Liczba sztuk: {{$servicesxd->pivot->liczba }} </li>
+                                <li>{{ $servicesxd->nazwa_uslugi }} <br> Liczba sztuk: {{$servicesxd->pivot->liczba }} </li>
                             </ul>
                         @endforeach
                     </th>
@@ -85,7 +89,18 @@
                                 {{ $order->user->name }} {{ $order->user->surname }}<br>{{ $order->user->profile->cars->marka}} {{ $order->user->profile->cars->model}}
 
                     </th>
-
+                    <th scope="row">
+                        {{$order->status}}
+                    </th>
+                    <th scope="row">
+                        {{$order->data_start}}
+                    </th>
+                    <th scope="row">
+                        {{$order->data_koniec}}
+                    </th>
+                    <th scope="row">
+                        <a href="{{url('editerek/'.$order->id)}}" class="btn btn-warning btn-sm">EDYTUJ</a>
+                    </th>
                 </tr>
             @endforeach
             </tbody>

@@ -100,9 +100,15 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Order $order)
+    public function update(Request $req): \Illuminate\Http\Response
     {
-        //
+        $data = uslugi::find($req->id);
+        $data -> status=$req->status;
+        $data -> data_start=$req->data_start;
+        $data -> data_koniec=$req->data_koniec;
+        $data -> save();
+        $data = Order::all();
+        return redirect('/orders');
     }
 
     /**
