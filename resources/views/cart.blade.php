@@ -53,7 +53,7 @@
         <tr>
             <td colspan="5" class="text-right">
                 <a href="{{ url('/services/list') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Kontynuj wybieranie usług</a>
-                @if(count(session('cart')) > 0)
+                @if (session()->exists('cart'))
                 <a class="btn btn-info" href="{{route('getPDF')}}">Pobierz w wersji PDF</a>
                 <button type='submit' class="btn btn-success">Checkout</button>
                 @endif

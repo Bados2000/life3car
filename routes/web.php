@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\userProfile;
@@ -46,11 +47,17 @@ Route::middleware(['auth','verified'])->group(function(){
     Route::get('/pdf', [App\Http\Controllers\PdfController::class, 'index'])->name('getPDF');
     Route::get('/profile', [userProfile::class, 'show'])->middleware('auth')->name('profile');
     Route::post('/profile/update', [userProfile::class, 'update'])->name('updateProfile');
+
+    ;
+    Route::get('/find',[ServicesController::class, 'find'])->name('web.find');
+
     Route::get('/updateCar', [updateCar::class, 'showw'])->middleware('auth')->name('updateCar');
     Route::post('/updateCar', [updateCar::class, 'updatee'])->middleware('auth')->name('updateCar');
 
     Route::get('/orders', [App\Http\Controllers\OrderController::class, 'index'])->name('index');
     Route::post('/orders', [App\Http\Controllers\OrderController::class, 'store'])->name('orders.store');
+
+
 
 
 });

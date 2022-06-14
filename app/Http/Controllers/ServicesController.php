@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\uslugi;
+use Illuminate\Support\Facades\DB;
 
 class ServicesController extends Controller
 {
@@ -11,10 +12,26 @@ class ServicesController extends Controller
 
     function index()
     {
-      return view('services.index',[
-          'uslugi' => uslugi ::paginate(10)
-      ]);
+        return view('services.index', [
+            'uslugi' => uslugi::paginate(10)
+        ]);
     }
+
+    function find(Request $request){
+
+        $request->validate([
+            'query'=>'required|min:2'
+        ]);
+
+        $search_text = $request->input('query');
+        $countries = DB::table('uslugi')
+            ->where('typ_uslugi','LIKE','%'.$search_text.'%')
+            ->orWhere('nazwa_uslugi','LIKE','%'.$search_text.'%')
+            ->paginate(1000000);
+        return view('services.index',['uslugi'=>$countries]);
+
+    }
+
 
     function edit($id)
     {

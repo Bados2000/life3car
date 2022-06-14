@@ -13,8 +13,20 @@
     @canany(['isUser'])
     <h1 class="text-center text-uppercase introduction-header">WYBIERZ USŁUGĘ</h1></span>
     @endcan
+    <form action="{{ route('web.find') }}" method="GET">
 
-    @canany(['isAdmin'])<h1 class="text-center text-uppercase introduction-header"></h1></span>
+        <div class="form-group">
+            <label for="">Enter keyword</label>
+            <input type="text" class="form-control" name="query" placeholder="Search here....." value="{{ request()->input('query') }}">
+            <span class="text-danger">@error('query'){{ 'Co ty to' }} @enderror</span>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Search</button>
+            <a class="btn btn-primary" href="{{ url('/services/list') }}">Powrót do pełnej listy</a>
+        </div>
+    </form>
+
+    @canany(['isAdmin'])<h1 class="text-center text-uppercase introduction-header"></h1>
         <div style=" display: flex; justify-content:space-between";>
         <form action="/add" method="POST">
             @csrf
@@ -70,7 +82,7 @@
     </tbody>
     </table>
     {{$uslugi->links()}}
-
+</div>
 
 
 

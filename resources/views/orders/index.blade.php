@@ -18,7 +18,7 @@
                 <th scope="col">Całkowita ilosc produktów</th>
                 <th scope="col">Cena</th>
                 <th scope="col">Produkty</th>
-                <th scope="col">Dane klienta</th>~`
+                <th scope="col">Dane klienta</th>
             </tr>
             </thead>
             <tbody>
@@ -62,13 +62,13 @@
                 <th scope="col">Całkowita ilosc produktów</th>
                 <th scope="col">Cena</th>
                 <th scope="col">Produkty</th>
-                <th scope="col">Dane klienta</th>~`
+                <th scope="col">Dane klienta</th>
             </tr>
             </thead>
             <tbody>
 
             @foreach($orders as $order )
-                
+
                 <tr>
                     <th scope="row">{{$order->id}}</th>
                     <th scope="row">{{$order->quantity}}</th>
@@ -86,7 +86,7 @@
 
                     </th>
 
-                </tr>             
+                </tr>
             @endforeach
             </tbody>
         </table>
@@ -95,6 +95,4 @@
     </div>
 @endcan
 
-
-    @include('layouts.prawa')
 @endsection
