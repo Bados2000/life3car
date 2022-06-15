@@ -16,7 +16,7 @@ class UserController extends Controller
     {
         return view('users.index',[
             'users' => User ::simplePaginate(5)
-            
+
 
         ]);
     }
@@ -82,12 +82,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    function deletek($id)
     {
-        $flight = User::find($id);
-        $flight->delete();
-        return response()->json([
-            'status' => 'sukces'
-        ]);
+        $data = User::find($id);
+        $data->delete();
+        $data = User::all();
+        return redirect('/users/list');
     }
+
 }

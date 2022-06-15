@@ -14,7 +14,7 @@
         </tr>
     </thead>
     <tbody>
-    @foreach($users as $user)    
+    @foreach($users as $user)
         <tr>
             <th scope="row">{{$user->id}}</th>
             <td>{{$user->name}}</td>
@@ -22,16 +22,14 @@
             <td>{{$user->email}}</td>
             <td>{{$user->phone_number}}</td>
             <td>
-                <button class='btn btn-danger btn-sm delete' data-id={{$user->id}}>
-                    Usuń
-                </button>
+                <a href="{{url('deletek/'.$user->id)}}"  class="btn btn-info" >Usuń</a>
             </td>
         </tr>
-    @endforeach    
+    @endforeach
     </tbody>
     </table>
     {{$users->links()}}
-</div>    
+</div>
 @endsection
 @section('javascript')
 
@@ -43,10 +41,10 @@
             })
             .done(function( response ) {
                 alert( "SUKCES");
-            }) 
+            })
             .fail(function( response ) {
                 alert( "BŁĄD");
-            });            
+            });
         });
     });
 @endsection

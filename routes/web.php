@@ -35,8 +35,8 @@ Route::patch('update-cart', [App\Http\Controllers\ServicesController::class, 'up
 Route::delete('remove-from-cart', [App\Http\Controllers\ServicesController::class, 'remove2'])->name('remove.from.cart');
 
 Route::middleware(['auth','verified'])->group(function(){
-    Route::get('/users/list',[UserController::class,'index'])->middleware('can:isAdmin');
-    Route::delete('/users/{id}',[UserController::class,'destroy'])->middleware('can:isAdmin');
+    Route::get('/users/list',[App\Http\Controllers\UserController::class,'index'])->middleware('can:isAdmin');
+    Route::get('/deletek/{id}',[App\Http\Controllers\UserController::class, 'deletek'])->middleware('can:isAdmin');
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
