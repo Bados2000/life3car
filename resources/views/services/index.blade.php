@@ -26,19 +26,7 @@
         </div>
     </form>
 
-    @canany(['isAdmin'])<h1 class="text-center text-uppercase introduction-header"></h1>
-        <div style=" display: flex; justify-content:space-between";>
-        <form action="/add" method="POST">
-            @csrf
-            <input placeholder='Typ usługi' style="border: solid green 2px; border-radius: 5px;"    name='typ_uslugi'  size="10px" >
-            <input placeholder='Nazwa usługi' name='nazwa_uslugi' style="border: solid green 2px; border-radius: 5px;" size="12px" >
-            <input placeholder='Czas realizacji' name='czas_realizacji' style="border: solid green 2px; border-radius: 5px;" size="12px">
-            <input placeholder='Cena usługi' name='cena_brutto' style="border: solid green 2px; border-radius: 5px;" size="12px">
-            <button  type="submit" class=" btn btn-success btn-sm" >DODAJ USŁUGE</button>
-        </form>
-        </div>
 
-    @endcan
 
 
     <table>
@@ -74,13 +62,18 @@
             @canany(['isAdmin'])
             <td>
                 <a class="btn btn-info" href="#" data-toggle="modal" data-target="#ModalEditer{{$uslugixd->id}}" >Edit</a>
-               <a href="{{url('delete/'.$uslugixd['id'])}}"  class="btn btn-info" >Usuń</a>
+
+               <a href="{{url('delete/'.$uslugixd->id)}}"  class="btn btn-info" >Usuń</a>
             </td>
                 @include('services.edit')
             @endcan
         </tr>
     @endforeach
     </tbody>
+        @canany(['isAdmin'])<h1 class="text-center text-uppercase introduction-header"></h1>
+        <a class="btn btn-info" href="#" data-toggle="modal" data-target="#ModalEditeror" >Dodaj usługę do bazy danych</a>
+        @include('services.create')
+        @endcan
     </table>
     {{$uslugi->links()}}
 </div>

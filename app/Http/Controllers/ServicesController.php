@@ -60,15 +60,16 @@ class ServicesController extends Controller
         return redirect('/services/list');
     }
 
-    function add(Request $req)
+    public function create():View
     {
-        $data = new uslugi;
-        $data -> typ_uslugi=$req->typ_uslugi;
-        $data -> nazwa_uslugi=$req->nazwa_uslugi;
-        $data -> czas_realizacji=$req->czas_realizacji;
-        $data -> cena_brutto=$req->cena_brutto;
-        $data -> save();
-        $data = uslugi::all();
+        return view('services.create');
+    }
+
+    public function store(Request $req)
+    {
+        $data = new uslugi($req->all());
+        $data->save();
+
         return redirect('/services/list');
     }
 
