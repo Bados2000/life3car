@@ -21,8 +21,8 @@
             <span class="text-danger">@error('query'){{ 'Co ty to' }} @enderror</span>
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary">Search</button>
-            <a class="btn btn-primary" href="{{ url('/services/list') }}">Powrót do pełnej listy</a>
+            <button type="submit" class="btn btn-info">Search</button>
+            <a class="btn btn-info" href="{{ url('/services/list') }}">Powrót do pełnej listy</a>
         </div>
     </form>
 
@@ -67,15 +67,16 @@
             @canany('isUser')
             <td>
 
-                  <a href="{{ route('add.to.cart', $uslugixd->id) }}" class="btn btn-success"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Dodaj</a>
+                  <a href="{{ route('add.to.cart', $uslugixd->id) }}" class="btn btn-info"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Dodaj</a>
 
             </td>
             @endcan
             @canany(['isAdmin'])
             <td>
-               <a href="{{url('edit/'.$uslugixd->id)}}" class="btn btn-warning btn-sm">EDYTUJ</a>
-               <a href="{{url('delete/'.$uslugixd['id'])}}"  class="btn btn-danger btn-sm">USUN</a>
+                <a class="btn btn-info" href="#" data-toggle="modal" data-target="#ModalEditer{{$uslugixd->id}}" >Edit</a>
+               <a href="{{url('delete/'.$uslugixd['id'])}}"  class="btn btn-info" >Usuń</a>
             </td>
+                @include('services.edit')
             @endcan
         </tr>
     @endforeach

@@ -52,10 +52,10 @@
         </tr>
         <tr>
             <td colspan="5" class="text-right">
-                <a href="{{ url('/services/list') }}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Kontynuj wybieranie usług</a>
+                <a href="{{ url('/services/list') }}" class="btn btn-info"><i class="fa fa-angle-left"></i> Kontynuj wybieranie usług</a>
                 @if(session()->exists('cart') and count(session('cart')) > 0 )
                 <a class="btn btn-info" href="{{route('getPDF')}}">Pobierz w wersji PDF</a>
-                <button type='submit' class="btn btn-success">Checkout</button>
+                <button type='submit' class="btn  btn-info">Checkout</button>
                 @endif
             </td>
         </tr>

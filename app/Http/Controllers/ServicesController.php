@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Models\uslugi;
 use Illuminate\Support\Facades\DB;
@@ -35,8 +36,8 @@ class ServicesController extends Controller
 
     function edit($id)
     {
-      $data = uslugi::find($id);
-      return view('edit', ['data'=>$data]);
+        $data = uslugi::find($id);
+        return view('editerek', compact('data'));
     }
 
     function delete($id)
@@ -47,13 +48,13 @@ class ServicesController extends Controller
       return redirect('/services/list');
     }
 
-    function update(Request $req)
+    public function update(Request $request, $id)
     {
-        $data = uslugi::find($req->id);
-        $data -> typ_uslugi=$req->typ_uslugi;
-        $data -> nazwa_uslugi=$req->nazwa_uslugi;
-        $data -> czas_realizacji=$req->czas_realizacji;
-        $data -> cena_brutto=$req->cena_brutto;
+        $data = uslugi::find($id);
+        $data -> typ_uslugi=$request-> input('typ_uslugi');
+        $data -> nazwa_uslugi= $request->input('nazwa_uslugi');
+        $data -> czas_realizacji= $request->input('czas_realizacji');
+        $data -> cena_brutto= $request->input('cena_brutto');
         $data -> save();
         $data = uslugi::all();
         return redirect('/services/list');
