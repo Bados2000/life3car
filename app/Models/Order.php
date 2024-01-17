@@ -16,8 +16,8 @@ class Order extends Model
         'price',
         'user_id',
         'status',
-        'data_start',
-        'data_koniec'
+        'start_date',
+        'end_date'
     ];
 
     public function user(): BelongsTo

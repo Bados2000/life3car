@@ -2,7 +2,7 @@
 <form action="{{ route('order.update',$order->id) }}" method="post" enctype="multipart/form-data">
 
     {{ csrf_field() }}
-    <div class="modal fade text-left" id="ModalEdit{{$order->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade text-left" id="ModalEditOrder{{$order->id}}" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -21,15 +21,15 @@
 
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <strong>{{ __('data_start') }}:</strong>
-                            {!! Form::text('data_start', $order->data_start, array('value' => '{{$data_start}}','class' => 'form-control')) !!}
+                            <strong>{{ __('start_date') }}:</strong>
+                            {!! Form::input('datetime-local', 'start_date', \Carbon\Carbon::parse($order->start_date)->format('Y-m-d\TH:i'), ['class' => 'form-control']) !!}
                         </div>
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
-                            <strong>{{ __('data_koniec') }}:</strong>
-                            {!! Form::text('data_koniec', $order->data_koniec, array('value' => '{{$data_koniect}}','class' => 'form-control')) !!}
+                            <strong>{{ __('end_date') }}:</strong>
+                            {!! Form::input('datetime-local', 'end_date', \Carbon\Carbon::parse($order->end_date)->format('Y-m-d\TH:i'), ['class' => 'form-control']) !!}
                         </div>
                     </div>
 

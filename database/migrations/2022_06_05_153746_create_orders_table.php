@@ -13,10 +13,13 @@ class CreateOrdersTable extends Migration
      */
     public function up()
     {
-        Schema::create('mistake', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->integer('quantity');
             $table->decimal('price');
+            $table->string('status')->default('złożono'); // Dodanie domyślnej wartości dla statusu
+            $table->timestamp('start_date')->nullable(); // Dodanie pola daty rozpoczęcia realizacji
+            $table->timestamp('end_date')->nullable(); // Dodanie pola daty zakończenia realizacji
             $table->timestamps();
             $table->foreignId('user_id')->constrained();
         });
@@ -29,6 +32,5 @@ class CreateOrdersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mistake');
     }
 }

@@ -52,7 +52,7 @@ Route::middleware(['auth','verified'])->group(function(){
 
 
     Route::get('/editerek/{id}',[App\Http\Controllers\OrderController::class, 'edit'])->middleware('can:isAdmin');
-    Route::post('/updaterek{id}',[App\Http\Controllers\OrderController::class, 'update'])->name('order.update')->middleware('can:isAdmin');
+    Route::post('/updaterek/{id}',[App\Http\Controllers\OrderController::class, 'update'])->name('order.update')->middleware('can:isAdmin');
 
     Route::get('/find',[ServicesController::class, 'find'])->name('web.find');
 

@@ -51,7 +51,7 @@
                     </th>
                         @if($order->status==='Zatwierdzone')
                     <th scope="row">
-                        {{$order->data_start}}
+                        {{$order->start_date}}
                     </th>
                     @else
                         <th scope="row">
@@ -60,7 +60,7 @@
                     @endif
                     @if($order->status==='Zatwierdzone')
                         <th scope="row">
-                            {{$order->data_koniec}}
+                            {{$order->end_date}}
                         </th>
                     @else
                         <th scope="row">
@@ -121,13 +121,13 @@
                         {{$order->status}}
                     </th>
                     <th scope="row">
-                        {{$order->data_start}}
+                        {{$order->start_date}}
                     </th>
                     <th scope="row">
-                        {{$order->data_koniec}}
+                        {{$order->end_date}}
                     </th>
                     <th scope="row">
-                        <a class="btn btn-warning" href="#" data-toggle="modal" data-target="#ModalEdit{{$order->id}}" style="color:black">Edit</a>
+                        <a class="btn btn-warning" href="#" data-toggle="modal" data-target="#ModalEditOrder{{$order->id}}" style="color:black">Edit</a>
                     </th>
                     @include('orders.edit')
                 </tr>

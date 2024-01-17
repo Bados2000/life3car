@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\order_uslugi;
+use App\Models\uslugi;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -96,10 +97,9 @@ class OrderController extends Controller
     {
         $data = Order::find($id);
         $data -> status=$request-> input('status');
-        $data -> data_start= $request->input('data_start');
-        $data -> data_koniec= $request->input('data_koniec');
+        $data -> start_date=$request-> input('start_date');
+        $data -> end_date= $request->input('end_date');
         $data -> save();
-        $data = Order::all();
         return redirect('/orders');
     }
 
