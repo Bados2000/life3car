@@ -22,13 +22,13 @@ p {
 .top {
     padding: 165px 0 175px;
     background-image: url('../images/bmw.png');
-    background-position: 70% -100%;
+    background-position: 50% 50%;
     background-repeat: no-repeat;
     position: absolute;
 
 }
 .top2{
-	
+
 	background-image: url('../images/top-bg2.jpg');
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
@@ -51,8 +51,6 @@ p {
 
 .top-button {
 
-	margin-top: -80px;
-    margin-left:-25cm;
 }
 .top-button2 {
     margin-top: -200px;

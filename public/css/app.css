@@ -70,8 +70,7 @@
   position: relative;
   top: 50px;
   left: 0;
-  width: 40%;
-  transform: translateX(20%);
+  width: max-content;
 }
 
 .positionButton{

@@ -11,7 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:900|Raleway:400,400i,700,700i" rel="stylesheet">;
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:900|Raleway:400,400i,700,700i" rel="stylesheet">
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">

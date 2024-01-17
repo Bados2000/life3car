@@ -10,14 +10,14 @@
         <link href="{{ asset('/css/custom.css') }}" rel="stylesheet">
 
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-        <div class="position-relative jumbotron jumbotron-fluid text-white text-center top ">
-            <div class="positionText">
-                <h1 class="top-header"> <span class="text-warning">Life 4 Car</span> </h1>
-                <p><span style="float: left;margin-top:-120px;font-size: large">Wszystko czego potrzebuje twoje auto w jednym miejscu</p></span>
-                <a class="btn btn-warning text-white top-button positionButton" href="{{ url('/services/list') }}">Podgląd usług</a>
-
+        <div class="position-relative jumbotron jumbotron-fluid text-white text-center top d-flex justify-content-center align-items-center">
+            <div class="positionText main d-flex flex-column align-items-center justify-content-center backg">
+                <h1 class="toplife"> <span class="text-warning">Life 4 Car</span> </h1>
+                <p><span>Wszystko czego potrzebuje twoje auto w jednym miejscu</span></p>
+                <a class="btn btn-warning text-white top-button" href="{{ url('/services/list') }}">Podgląd usług</a>
             </div>
         </div>
+
 
 
         <div class="introduction">
